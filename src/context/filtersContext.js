@@ -11,7 +11,12 @@ export const FiltersProvider = ({ children }) => {
     }
 
     return (
-        <FiltersContext.Provider value={{ filtersOpen, setFiltersOpen, toggleFilters }}>
+        <FiltersContext.Provider value={
+            { filtersOpen, 
+              setFiltersOpen, 
+              toggleFilters
+            }
+        }>
             {children}
         </FiltersContext.Provider>
     )
