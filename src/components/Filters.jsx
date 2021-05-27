@@ -19,11 +19,11 @@ const Filters = () => {
                     <XIcon className="h-6 text-gray-500 cursor-pointer" onClick={toggleFilters} />
                 </div>
                 <div>
-                    <label htmlFor=""></label>
+                    <label htmlFor="minAbv"></label>
                     <input 
                         type="range" 
                         name="" 
-                        id="" 
+                        id="minAbv" 
                     />
                 </div>
             </form>    
