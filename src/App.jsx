@@ -1,22 +1,36 @@
-import { useState, useEffect } from 'react'
-import BeerItem from './components/BeerItem'
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import BrewHouse from './containers/BrewHouse'
+import BeerPage from './containers/BeerPage'
 import Filters from './components/Filters'
 import { FiltersProvider } from './context/filtersContext'
+import { useContext } from 'react'
+import ApiContext from './context/apiContext'
 
 const App = () => {
 
+  const { beers } = useContext(ApiContext); 
+
   return (
-    <FiltersProvider>
-      <div className="w-full h-screen">
-        <Header />
-        <Filters />
-        <BrewHouse />
-        <Footer />
-      </div>
-    </FiltersProvider>
+    <Router>
+      <FiltersProvider>
+        <div className="w-full h-screen">
+          <Header />
+          <Filters />
+          <Switch>
+            <Route exact path="/" render={(props) => (
+              <BrewHouse {...props} />
+            )} />
+            <Route exact path="/beers/:id" render={(props) => (
+              <BeerPage {...props} />
+            )} />
+          </Switch>
+          {/* <BrewHouse /> */}
+          <Footer />
+        </div>
+      </FiltersProvider>
+    </Router>
   )
 }
 

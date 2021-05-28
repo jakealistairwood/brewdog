@@ -11,9 +11,9 @@ const Header = ({ fetchBeers, setBeerName }) => {
 
     return (
         <header className="flex justify-between items-center bg-white p-6 shadow-sm">
-            <div className="h-14">
+            <a href="/" className="h-14">
                 <img className="h-full" src={Logo} alt="brewdog" />
-            </div>
+            </a>
             <Search fetchBeers={fetchBeers} setBeerName={setBeerName} />
             <div className="flex items-center space-x-6">
                 <button className="focus:outline-black" onClick={toggleFilters}>Filters</button>
