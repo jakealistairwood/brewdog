@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-[#fafafa] w-full h-full
+    @apply bg-[#fafafa] w-full
   }
 
   li, a {

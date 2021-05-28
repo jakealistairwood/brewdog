@@ -40,7 +40,7 @@ const BeerPage = (props) => {
         //     </div>
         // </div>
         <div>
-
+            <p>Need to fix API request. Keep getting undefined as request taking too long before page rendered.</p>
         </div>
     )
 }
