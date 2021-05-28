@@ -52,7 +52,6 @@ const BeerPage = (props) => {
             <div>Api failed to load. Need to fix API request.</div>
         )}
         </>
-        // <div>Need to fix API request</div>
     )
 }
 

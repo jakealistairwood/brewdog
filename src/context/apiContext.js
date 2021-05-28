@@ -15,7 +15,7 @@ export const ApiProvider = ({ children }) => {
     const searchByMaxABV = `&abv_lt=${maxABV}`;
 
     const fetchBeers = async() => {
-        const res = await axios.get(`https://api.punkapi.com/v2/beers?per_page=48${searchByName}${searchByMinABV}`);
+        const res = await axios.get(`https://api.punkapi.com/v2/beers?per_page=48${searchByName}${searchByMinABV}${searchByMaxABV}`);
         setBeers(res.data);
     }
 
