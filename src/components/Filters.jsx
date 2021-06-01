@@ -20,7 +20,7 @@ const Filters = () => {
 
     return (
         <div className={toggleFiltersModal}>
-            <form className="flex flex-col z-999 w-1/3 bg-white p-6 rounded-md" onSubmit={handleSubmit}>
+            <form className="flex flex-col z-999 w-2/3 lg:w-1/3 bg-white p-6 rounded-md" onSubmit={handleSubmit}>
                 <div className="flex justify-between items-center mb-6">
                     <h3 className="text-2xl font-bold">Filter Options</h3>
                     <XIcon className="h-6 text-gray-500 cursor-pointer" onClick={toggleFilters} />

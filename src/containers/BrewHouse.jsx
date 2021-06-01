@@ -12,9 +12,9 @@ const BrewHouse = () => {
                 backgroundImage: "url('/img/banner-img.svg')",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
-                backgroundPosition: "0 -100px"
+                backgroundPosition: "0",
             }}>
-                <h1 className="mb-10 uppercase text-5xl tracking-wider font-bold text-white">Discover our award-winning Range</h1>
+                <h1 className="mb-10 uppercase px-2 text-xl sm:text-2xl lg:text-5xl text-center tracking-wider font-bold text-white">Discover our award-winning Range</h1>
             </div>
             {beers.length === 0 ? (
                 <div className="flex items-center justify-center my-20">
