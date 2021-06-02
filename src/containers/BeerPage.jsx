@@ -25,17 +25,17 @@ const BeerPage = (props) => {
         <>
         {loading ? (
             <div className="flex flex-col">
-                <div className="flex flex-row w-3/5 mx-auto my-20">
+                <div className="flex flex-col lg:flex-row w-3/5 mx-auto my-20">
                     <div className="flex">
                         <img src={beer.image_url} />
                     </div>
-                    <div className="flex flex-col ml-40">
-                        <h1 className="font-black text-6xl">{beer.name}</h1>
-                        <div className="flex justify-between items-center">
-                            <h3 className="italic text-gray-300 mt-2 text-2xl font-light">"{beer.tagline}"</h3>
+                    <div className="flex flex-col mt-10 lg:mt-0 lg:ml-40">
+                        <h1 className="font-black text-6xl text-center md:text-left">{beer.name}</h1>
+                        <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                            <h3 className="italic text-gray-300 mt-2 text-2xl font-light mb-6 md:mb-0">"{beer.tagline}"</h3>
                             <p className="rounded-full border-2 border-solid border-black py-2 px-5 w-max font-bold text-xl">ABV: {beer.abv}%</p>
                         </div>
-                        <p className="font-light my-6">{beer.description}</p>
+                        <p className="font-light my-6 text-center md:text-left">{beer.description}</p>
                         <ul className="my-4 bg-gray-100 p-6 w-max">
                             <h4 className="text-xl font-bold mb-2">Delicious with: </h4>
                             {beer.food_pairing.map(pairing => (
@@ -51,7 +51,7 @@ const BeerPage = (props) => {
                             <div className="h-1 w-20 bg-gray-400 mb-6"></div>
                             <p className="font-light text-gray-600 italic text-center w-2/3"><span className="font-bold">Brewers tip:</span> {beer.brewers_tips}</p>
                         </div>
-                        <div className="grid grid-cols-3 gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             <ul className="p-8 text-center border-solid border-2 border-gray-200 rounded-lg">
                                 <h4 className="text-2xl font-bold mb-4">Malts</h4>
                                 {beer.ingredients.malt.map(malt => (
