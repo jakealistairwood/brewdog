@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import Logo from '../assets/img/brewdog_black.png'
-import { PencilAltIcon } from '@heroicons/react/solid'
+import { PencilAltIcon, SearchIcon } from '@heroicons/react/solid'
 import Search from '../components/Search'
 import FiltersContext from '../context/filtersContext'
 import AuthContext from '../context/authContext'
@@ -18,7 +18,8 @@ const Header = ({ fetchBeers, setBeerName }) => {
             </a>
             <Search fetchBeers={fetchBeers} setBeerName={setBeerName} />
             <div className="flex items-center space-x-6">
-                <button className="focus:outline-black" onClick={toggleFilters}>Filters</button>
+                <SearchIcon className=" sm:hidden h-6 text-gray-700" onClick={toggleFilters} />
+                <button className="hidden sm:flex focus:outline-black" onClick={toggleFilters}>Filters</button>
                 {!user ? (
                     <button 
                     className="flex items-center bg-black rounded-full text-white py-2 px-4"

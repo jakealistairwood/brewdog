@@ -2,11 +2,19 @@ import { useContext } from 'react';
 import FiltersContext from '../context/filtersContext'
 import ApiContext from '../context/apiContext'
 import { XIcon } from '@heroicons/react/solid'
+import { SearchIcon } from '@heroicons/react/outline'
+import Search from './Search'
 
 const Filters = () => {
 
     const { filtersOpen, toggleFilters } = useContext(FiltersContext);
-    const { minABV, setMinABV, maxABV, setMaxABV, fetchBeers } = useContext(ApiContext);
+    const { minABV, 
+            setMinABV, 
+            maxABV, 
+            setMaxABV, 
+            fetchBeers, 
+            setBeerName 
+        } = useContext(ApiContext);
 
     const toggleFiltersModal = 
     filtersOpen 
@@ -20,12 +28,24 @@ const Filters = () => {
 
     return (
         <div className={toggleFiltersModal}>
-            <form className="flex flex-col z-999 w-2/3 lg:w-1/3 bg-white p-6 rounded-md" onSubmit={handleSubmit}>
+            <form className="flex flex-col z-999 w-3/4 lg:w-1/3 bg-white p-6 rounded-md" onSubmit={handleSubmit}>
                 <div className="flex justify-between items-center mb-6">
                     <h3 className="text-2xl font-bold">Filter Options</h3>
                     <XIcon className="h-6 text-gray-500 cursor-pointer" onClick={toggleFilters} />
                 </div>
                 <div className="flex flex-col">
+                    <div className="flex flex-row items-center bg-gray-100 rounded-full px-4 py-2 space-x-4 mb-4">
+                        <SearchIcon className="h-6 text-gray-400" />
+                        <input 
+                            type="text"
+                            className="bg-transparent outline-none placeholder-gray-500" 
+                            placeholder="Search our library..." 
+                            onChange={(e) => {
+                                setBeerName(e.target.value)
+                                fetchBeers()
+                            }}
+                        />
+                    </div>
                     <div className="flex flex-col">
                         <label htmlFor="minABV">Min ABV</label>
                         <div className="flex mb-4">
