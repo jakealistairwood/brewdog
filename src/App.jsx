@@ -22,9 +22,12 @@ const App = () => {
             <Route exact path="/" render={(props) => (
               <BrewHouse {...props} />
             )} />
-            <Route exact path="/beers/:id" render={(props) => (
-              <BeerPage {...props} />
-            )} />
+            <Route exact path="/beers/:id">
+              <BeerPage beers={beers} />
+            </Route>
+            {/* <Route exact path="/beers/:id" render={(props) => (
+              <BeerPage />
+            )} /> */}
           </Switch>
           {/* <BrewHouse /> */}
           <Footer />
